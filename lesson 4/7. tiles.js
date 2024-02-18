@@ -75,8 +75,9 @@ const [n26, m26, t26] = input26.trim().split('\n')
 const bigIntMax = (...args) => args.reduce((m, e) => e > m ? e : m)
 
 function tiles(squareWidth, squareHeight, tiles) {
+  let count = 0
+
   if(BigInt(tiles) > 100000000) {
-    let count = 0;
     let min = BigInt(0);
     let max = bigIntMax(BigInt(squareWidth), BigInt(squareHeight));
 
@@ -110,7 +111,6 @@ function tiles(squareWidth, squareHeight, tiles) {
     let numberT = Number(tiles);
     let numberSquareWidth = Number(squareWidth)
     let numberSquareHeight = Number(squareHeight)
-    let count = 0
 
     while (numberT > 0 && numberSquareWidth > 0 && numberSquareHeight > 0) {
       numberT -= (numberSquareWidth - 2) * 2 + numberSquareHeight * 2
